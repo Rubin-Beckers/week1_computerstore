@@ -1,6 +1,5 @@
 package be.pxl.computerstore.hardware;
 
-import be.pxl.computerstore.hardware.ComputerCase;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
