@@ -3,7 +3,7 @@ package be.pxl.computerstore.hardware;
 import be.pxl.computerstore.util.Dimension;
 
 public class ComputerCase extends ComputerComponent {
-    private Dimension caseDimension;
+    private Dimension dimension;
     private double weight;
 
     public ComputerCase(String vendor, String name, double price) {
@@ -13,12 +13,12 @@ public class ComputerCase extends ComputerComponent {
         setArticleNumber();
     }
 
-    public Dimension getCaseDimension() {
-        return caseDimension;
+    public Dimension getDimension() {
+        return dimension;
     }
 
-    public void setCaseDimension(Dimension caseDimension) {
-        this.caseDimension = caseDimension;
+    public void setDimension(Dimension dimension) {
+        this.dimension = dimension;
     }
 
     public double getWeight() {
@@ -31,7 +31,7 @@ public class ComputerCase extends ComputerComponent {
 
     public String getFullDescription() {
         String description = super.getFullDescription();
-        description += String.format("Width = %d \nHeight = %d \nDepth = %d \nWeight = %d", getCaseDimension().getWidth(), getCaseDimension().getHeight(), getCaseDimension().getDepth(), getWeight());
+        description += String.format("Width = %d \nHeight = %d \nDepth = %d \nWeight = %d", getDimension().getWidth(), getDimension().getHeight(), getDimension().getDepth(), getWeight());
 
         return description;
     }
