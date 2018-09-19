@@ -10,6 +10,7 @@ public class ComputerSystem implements Computable {
 
     private Peripheral[] peripherals = new Peripheral[3];
     private static int numberOfPeripherals = 0;
+    public static final int MAX_PERIPHERAL = 3;
 
     public ComputerSystem() {
     }
@@ -39,7 +40,7 @@ public class ComputerSystem implements Computable {
     }
 
     public void addPeripheral(Peripheral peripheral) throws TooManyPeripheralsException {
-        if (numberOfPeripherals >= 3) {
+        if (numberOfPeripherals >= MAX_PERIPHERAL) {
             throw new TooManyPeripheralsException("You have reached the maximum amount of peripheras allowed.");
         } else {
             peripherals[numberOfPeripherals] = peripheral;
@@ -47,8 +48,20 @@ public class ComputerSystem implements Computable {
         }
     }
 
+    public void removePeripheral(String articleNumber) {
+        for(Peripheral testedPeripheral : peripherals) {
+            if (testedPeripheral.getArticleNumber() == articleNumber) {
+                testedPeripheral = null;
+            }
+        }
+    }
+
     public int getNumberOfPeripherals() {
         return numberOfPeripherals;
+    }
+
+    public Peripheral[] getPeripherals() {
+        return peripherals;
     }
 
     @Override
